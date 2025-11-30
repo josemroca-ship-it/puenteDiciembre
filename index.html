@@ -30,16 +30,19 @@
             overflow-x: hidden;
             overflow-y: visible !important;
         }
-        /* Fondo de carga */
-        .img-placeholder {
-            background-color: #cbd5e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        
+        /* Patrones de fondo para las infografías CSS */
+        .pattern-grid {
+            background-image: radial-gradient(#ffffff 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+        .pattern-waves {
+            background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 10px, transparent 10px, transparent 20px);
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 pb-12">
+<body class="bg-gray-50 text-gray-800 pb-12">
 
     <!-- Navbar Sticky -->
     <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-md px-4 py-3 flex justify-between items-center">
@@ -51,29 +54,30 @@
         </button>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="relative h-72 flex flex-col justify-center items-center text-white text-center p-6 mb-6 shadow-md overflow-hidden bg-gray-700">
-        <!-- Imagen Header: Costa del Sol / Málaga -->
-        <img src="https://images.unsplash.com/photo-1561580977-8c46059d087b?auto=format&fit=crop&w=1000&q=80" 
-             onerror="this.src='https://placehold.co/1000x500/2c7a7b/ffffff?text=Málaga+Costa+del+Sol'"
-             alt="Costa del Sol" 
-             class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-75">
+    <!-- Hero Section Infographic -->
+    <header class="relative h-72 flex flex-col justify-center items-center text-white text-center p-6 mb-6 shadow-md overflow-hidden bg-gradient-to-br from-teal-800 to-blue-900">
+        <!-- Fondo Decorativo -->
+        <div class="absolute inset-0 pattern-waves"></div>
+        <i class="fas fa-map-marked-alt text-9xl absolute -right-10 -bottom-10 text-white opacity-10 transform -rotate-12"></i>
         
         <div class="relative z-10 w-full max-w-md">
-            <h1 class="text-4xl font-extrabold mb-1 drop-shadow-lg">Puente de Diciembre</h1>
-            <p class="text-lg font-medium drop-shadow-md opacity-95">6 - 8 Diciembre 2025</p>
+            <div class="mb-2 inline-block bg-white/20 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase border border-white/20">
+                <i class="fas fa-calendar-alt mr-1"></i> 6 - 8 Diciembre 2025
+            </div>
+            <h1 class="text-4xl font-extrabold mb-1 drop-shadow-md">Escapada al Sur</h1>
+            <p class="text-lg font-light opacity-90">Ruta por Málaga y Pueblos Blancos</p>
             
             <!-- Base Address Card -->
-            <div class="mt-6 bg-white/95 backdrop-blur-sm text-gray-800 p-3 rounded-xl shadow-lg flex items-center gap-3 text-left transform scale-95 sm:scale-100">
-                <div class="bg-teal-100 p-2 rounded-full text-teal-600">
+            <div class="mt-6 bg-white/95 backdrop-blur-sm text-gray-800 p-3 rounded-xl shadow-lg flex items-center gap-3 text-left transform scale-95 sm:scale-100 border-l-4 border-teal-500">
+                <div class="bg-teal-100 p-3 rounded-full text-teal-600">
                     <i class="fas fa-home fa-lg"></i>
                 </div>
                 <div class="flex-1 leading-tight">
                     <p class="text-xs text-gray-500 font-bold uppercase">Nuestra Base</p>
-                    <p class="text-sm font-semibold truncate">C. John Lennon, 8</p>
+                    <p class="text-sm font-bold truncate text-gray-800">C. John Lennon, 8</p>
                     <p class="text-xs text-gray-600">Torremolinos, Málaga</p>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=C.+John+Lennon,+8,+29620+Torremolinos,+Málaga" target="_blank" class="bg-teal-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-teal-700 shadow-md">
+                <a href="https://www.google.com/maps/search/?api=1&query=C.+John+Lennon,+8,+29620+Torremolinos,+Málaga" target="_blank" class="bg-teal-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-teal-700 shadow-md transition transform hover:scale-110">
                     <i class="fas fa-location-arrow text-xs"></i>
                 </a>
             </div>
@@ -83,43 +87,52 @@
     <main class="max-w-2xl mx-auto px-4 space-y-6 -mt-10 relative z-10">
 
         <!-- Weather Widget -->
-        <div class="bg-white rounded-xl shadow-md p-4 flex justify-between items-center text-center divide-x divide-gray-100">
+        <div class="bg-white rounded-xl shadow-md p-4 flex justify-between items-center text-center divide-x divide-gray-100 border-t-4 border-yellow-400">
             <div class="flex-1 px-1">
                 <p class="text-xs text-gray-400 font-bold uppercase mb-1">Sáb 6</p>
-                <i class="fas fa-cloud-sun text-yellow-500 text-2xl mb-1"></i>
+                <i class="fas fa-cloud-sun text-yellow-500 text-2xl mb-1 drop-shadow-sm"></i>
                 <p class="text-sm font-bold text-gray-700">18°C</p>
             </div>
             <div class="flex-1 px-1">
                 <p class="text-xs text-gray-400 font-bold uppercase mb-1">Dom 7</p>
-                <i class="fas fa-cloud text-gray-400 text-2xl mb-1"></i>
+                <i class="fas fa-cloud text-gray-400 text-2xl mb-1 drop-shadow-sm"></i>
                 <p class="text-sm font-bold text-gray-700">19°C</p>
             </div>
             <div class="flex-1 px-1">
                 <p class="text-xs text-gray-400 font-bold uppercase mb-1">Lun 8</p>
-                <i class="fas fa-sun text-orange-400 text-2xl mb-1"></i>
+                <i class="fas fa-sun text-orange-400 text-2xl mb-1 drop-shadow-sm"></i>
                 <p class="text-sm font-bold text-gray-700">19°C</p>
             </div>
         </div>
 
         <!-- Día 1 -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden card-zoom">
-            <div class="relative h-40 flex items-end p-4 bg-gray-300">
-                <!-- Imagen Día 1: Mijas / Pueblo Blanco -->
-                <img src="https://images.unsplash.com/photo-1534234828569-1f9426d0b30d?auto=format&fit=crop&w=800&q=80" 
-                     onerror="this.src='https://placehold.co/800x400/319795/ffffff?text=Mijas+Pueblo'"
-                     alt="Mijas Pueblo" 
-                     class="absolute inset-0 w-full h-full object-cover z-0 brightness-75">
-                <div class="relative z-10 text-white w-full">
-                    <h2 class="text-2xl font-bold leading-none drop-shadow-md">Día 1: Mijas & Málaga</h2>
-                    <p class="text-sm opacity-90 drop-shadow-sm">Sábado 6 - Pueblos Blancos y Luces</p>
+            <!-- Infografía Cabecera Día 1 -->
+            <div class="relative h-40 flex items-center justify-between p-6 bg-gradient-to-r from-cyan-500 to-blue-500 text-white overflow-hidden">
+                <div class="absolute inset-0 pattern-grid"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold leading-none mb-1">Día 1</h2>
+                    <p class="text-sm font-medium opacity-90 uppercase tracking-wider">Mijas & Málaga</p>
+                    <div class="mt-2 flex space-x-2">
+                        <span class="bg-white/20 text-xs px-2 py-1 rounded">Pueblo Blanco</span>
+                        <span class="bg-white/20 text-xs px-2 py-1 rounded">Luces Navidad</span>
+                    </div>
+                </div>
+                <!-- Iconos Decorativos: Espeto Malagueño -->
+                <div class="relative z-10 text-right opacity-90 flex flex-col items-end">
+                     <!-- Pez inclinado (Espeto) -->
+                    <i class="fas fa-fish text-5xl mb-1 transform -rotate-45 origin-bottom-left text-gray-100"></i>
+                    <!-- Fuego (Brasas) -->
+                    <i class="fas fa-fire text-2xl text-orange-300 mr-6 animate-pulse"></i>
                 </div>
             </div>
+
             <div class="p-5 relative">
                 <div class="timeline-line"></div>
                 
                 <!-- Item 1.1 -->
                 <div class="relative pl-8 mb-8">
-                    <div class="absolute left-2 top-1 w-4 h-4 bg-teal-500 rounded-full border-2 border-white z-10 shadow"></div>
+                    <div class="absolute left-2 top-1 w-4 h-4 bg-cyan-500 rounded-full border-2 border-white z-10 shadow"></div>
                     <div class="flex justify-between items-start">
                         <div>
                             <h3 class="font-bold text-gray-800">Mañana: Mijas Pueblo</h3>
@@ -127,9 +140,9 @@
                                 <i class="fas fa-info-circle mr-1"></i> Ver detalle
                             </button>
                         </div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Parking+Virgen+de+la+Peña+Mijas" target="_blank" class="flex flex-col items-center ml-2">
-                            <span class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 hover:bg-blue-200"><i class="fas fa-parking"></i></span>
-                            <span class="text-[10px] text-blue-600 font-bold">Mapa</span>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Parking+Virgen+de+la+Peña+Mijas" target="_blank" class="flex flex-col items-center ml-2 group">
+                            <span class="bg-gray-100 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 group-hover:bg-cyan-500 group-hover:text-white transition"><i class="fas fa-parking"></i></span>
+                            <span class="text-[10px] text-gray-500 font-bold group-hover:text-cyan-600">Mapa</span>
                         </a>
                     </div>
                 </div>
@@ -151,8 +164,8 @@
                                 <i class="fas fa-info-circle mr-1"></i> Ver detalle
                             </button>
                         </div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Estación+Tren+Torremolinos" target="_blank" class="flex flex-col items-center ml-2">
-                            <span class="bg-purple-100 text-purple-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 hover:bg-purple-200"><i class="fas fa-train"></i></span>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Estación+Tren+Torremolinos" target="_blank" class="flex flex-col items-center ml-2 group">
+                            <span class="bg-purple-100 text-purple-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 group-hover:bg-purple-600 group-hover:text-white transition"><i class="fas fa-train"></i></span>
                             <span class="text-[10px] text-purple-600 font-bold">Estación</span>
                         </a>
                     </div>
@@ -162,17 +175,23 @@
 
         <!-- Día 2 -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden card-zoom">
-            <div class="relative h-40 flex items-end p-4 bg-gray-300">
-                <!-- Imagen Día 2: Ronda -->
-                <img src="https://images.unsplash.com/photo-1561731216-c3a4d99436dd?auto=format&fit=crop&w=800&q=80" 
-                     onerror="this.src='https://placehold.co/800x400/5a67d8/ffffff?text=Ronda+Puente+Nuevo'"
-                     alt="Ronda" 
-                     class="absolute inset-0 w-full h-full object-cover z-0 brightness-75">
-                <div class="relative z-10 text-white w-full">
-                    <h2 class="text-2xl font-bold leading-none drop-shadow-md">Día 2: Ruta Bandoleros</h2>
-                    <p class="text-sm opacity-90 drop-shadow-sm">Domingo 7 - Ronda y Setenil</p>
+            <!-- Infografía Cabecera Día 2 -->
+            <div class="relative h-40 flex items-center justify-between p-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white overflow-hidden">
+                <div class="absolute inset-0 pattern-waves opacity-20"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold leading-none mb-1">Día 2</h2>
+                    <p class="text-sm font-medium opacity-90 uppercase tracking-wider">Ruta Bandoleros</p>
+                    <div class="mt-2 flex space-x-2">
+                        <span class="bg-white/20 text-xs px-2 py-1 rounded">Puente Nuevo</span>
+                        <span class="bg-white/20 text-xs px-2 py-1 rounded">Rocas</span>
+                    </div>
+                </div>
+                <!-- Iconos Decorativos -->
+                <div class="relative z-10 text-right opacity-90">
+                    <i class="fas fa-archway text-6xl block"></i>
                 </div>
             </div>
+
             <div class="p-5 relative">
                 <div class="timeline-line"></div>
                 
@@ -186,9 +205,9 @@
                                 <i class="fas fa-info-circle mr-1"></i> Ver detalle
                             </button>
                         </div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Parking+Plaza+del+Socorro+Ronda" target="_blank" class="flex flex-col items-center ml-2">
-                            <span class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 hover:bg-blue-200"><i class="fas fa-parking"></i></span>
-                            <span class="text-[10px] text-blue-600 font-bold">Mapa</span>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Parking+Plaza+del+Socorro+Ronda" target="_blank" class="flex flex-col items-center ml-2 group">
+                            <span class="bg-gray-100 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 group-hover:bg-indigo-500 group-hover:text-white transition"><i class="fas fa-parking"></i></span>
+                            <span class="text-[10px] text-gray-500 font-bold group-hover:text-indigo-600">Mapa</span>
                         </a>
                     </div>
                 </div>
@@ -203,9 +222,9 @@
                                 <i class="fas fa-info-circle mr-1"></i> Ver detalle
                             </button>
                         </div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Parking+Setenil+de+las+Bodegas" target="_blank" class="flex flex-col items-center ml-2">
-                            <span class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 hover:bg-blue-200"><i class="fas fa-parking"></i></span>
-                            <span class="text-[10px] text-blue-600 font-bold">Mapa</span>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Parking+Setenil+de+las+Bodegas" target="_blank" class="flex flex-col items-center ml-2 group">
+                            <span class="bg-gray-100 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 group-hover:bg-indigo-500 group-hover:text-white transition"><i class="fas fa-parking"></i></span>
+                            <span class="text-[10px] text-gray-500 font-bold group-hover:text-indigo-600">Mapa</span>
                         </a>
                     </div>
                 </div>
@@ -220,8 +239,8 @@
                                 <i class="fas fa-info-circle mr-1"></i> Ver detalle
                             </button>
                         </div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=La+Carihuela+Torremolinos" target="_blank" class="flex flex-col items-center ml-2">
-                            <span class="bg-pink-100 text-pink-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 hover:bg-pink-200"><i class="fas fa-umbrella-beach"></i></span>
+                        <a href="https://www.google.com/maps/search/?api=1&query=La+Carihuela+Torremolinos" target="_blank" class="flex flex-col items-center ml-2 group">
+                            <span class="bg-pink-100 text-pink-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 group-hover:bg-pink-500 group-hover:text-white transition"><i class="fas fa-umbrella-beach"></i></span>
                             <span class="text-[10px] text-pink-600 font-bold">Mapa</span>
                         </a>
                     </div>
@@ -231,17 +250,24 @@
 
         <!-- Día 3 -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden card-zoom">
-            <div class="relative h-40 flex items-end p-4 bg-gray-300">
-                <!-- Imagen Día 3: Nerja -->
-                <img src="https://images.unsplash.com/photo-1596716039327-02409df87d5b?auto=format&fit=crop&w=800&q=80" 
-                     onerror="this.src='https://placehold.co/800x400/3182ce/ffffff?text=Nerja+Balcon+de+Europa'"
-                     alt="Nerja" 
-                     class="absolute inset-0 w-full h-full object-cover z-0 brightness-75">
-                <div class="relative z-10 text-white w-full">
-                    <h2 class="text-2xl font-bold leading-none drop-shadow-md">Día 3: La Axarquía</h2>
-                    <p class="text-sm opacity-90 drop-shadow-sm">Lunes 8 - Nerja y Frigiliana</p>
+            <!-- Infografía Cabecera Día 3 -->
+            <div class="relative h-40 flex items-center justify-between p-6 bg-gradient-to-r from-blue-400 to-teal-400 text-white overflow-hidden">
+                <div class="absolute inset-0 pattern-grid"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold leading-none mb-1">Día 3</h2>
+                    <p class="text-sm font-medium opacity-90 uppercase tracking-wider">La Axarquía</p>
+                    <div class="mt-2 flex space-x-2">
+                        <span class="bg-white/20 text-xs px-2 py-1 rounded">Balcón de Europa</span>
+                        <span class="bg-white/20 text-xs px-2 py-1 rounded">Cueva</span>
+                    </div>
+                </div>
+                <!-- Iconos Decorativos -->
+                <div class="relative z-10 text-right opacity-90 flex flex-col items-end">
+                    <i class="fas fa-sun text-4xl mb-1 text-yellow-200"></i>
+                    <i class="fas fa-water text-5xl"></i>
                 </div>
             </div>
+
             <div class="p-5 relative">
                 <div class="timeline-line"></div>
                 
@@ -255,9 +281,9 @@
                                 <i class="fas fa-info-circle mr-1"></i> Ver detalle
                             </button>
                         </div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Parking+Balcon+de+Europa+Nerja" target="_blank" class="flex flex-col items-center ml-2">
-                            <span class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 hover:bg-blue-200"><i class="fas fa-parking"></i></span>
-                            <span class="text-[10px] text-blue-600 font-bold">Mapa</span>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Parking+Balcon+de+Europa+Nerja" target="_blank" class="flex flex-col items-center ml-2 group">
+                            <span class="bg-gray-100 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 group-hover:bg-blue-400 group-hover:text-white transition"><i class="fas fa-parking"></i></span>
+                            <span class="text-[10px] text-gray-500 font-bold group-hover:text-blue-500">Mapa</span>
                         </a>
                     </div>
                 </div>
@@ -271,7 +297,7 @@
 
                 <!-- Item 3.3 -->
                 <div class="relative pl-8">
-                    <div class="absolute left-2 top-1 w-4 h-4 bg-blue-600 rounded-full border-2 border-white z-10 shadow"></div>
+                    <div class="absolute left-2 top-1 w-4 h-4 bg-teal-500 rounded-full border-2 border-white z-10 shadow"></div>
                     <div class="flex justify-between items-start">
                         <div>
                             <h3 class="font-bold text-gray-800">Tarde: Frigiliana</h3>
@@ -279,9 +305,9 @@
                                 <i class="fas fa-info-circle mr-1"></i> Ver detalle
                             </button>
                         </div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Parking+Público+Frigiliana" target="_blank" class="flex flex-col items-center ml-2">
-                            <span class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 hover:bg-blue-200"><i class="fas fa-parking"></i></span>
-                            <span class="text-[10px] text-blue-600 font-bold">Mapa</span>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Parking+Público+Frigiliana" target="_blank" class="flex flex-col items-center ml-2 group">
+                            <span class="bg-gray-100 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 group-hover:bg-teal-500 group-hover:text-white transition"><i class="fas fa-parking"></i></span>
+                            <span class="text-[10px] text-gray-500 font-bold group-hover:text-teal-600">Mapa</span>
                         </a>
                     </div>
                 </div>
@@ -304,7 +330,7 @@
                 <div class="flex justify-between items-center pb-3 border-b border-gray-100">
                     <p class="text-xl font-bold text-teal-700" id="modal-title">Título</p>
                     <div class="modal-close cursor-pointer z-50" onclick="closeModal()">
-                        <i class="fas fa-times text-gray-500 hover:text-red-500"></i>
+                        <i class="fas fa-times text-gray-500 hover:text-red-500 transition"></i>
                     </div>
                 </div>
 
@@ -315,7 +341,7 @@
 
                 <!-- Footer -->
                 <div class="flex justify-end pt-2">
-                    <button class="px-4 py-2 bg-teal-500 p-3 rounded-lg text-white hover:bg-teal-400 text-sm font-semibold" onclick="closeModal()">Cerrar</button>
+                    <button class="px-4 py-2 bg-teal-500 rounded-lg text-white hover:bg-teal-600 text-sm font-semibold transition shadow" onclick="closeModal()">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -327,31 +353,31 @@
         const details = {
             'mijas': {
                 title: 'Mijas Pueblo',
-                body: '<p class="mb-2"><strong>Qué haremos:</strong> Aparcaremos en el parking público (aprox 1€/día). Subiremos al <strong>Mirador del Compás</strong> para ver las vistas.</p><p class="mb-2">Visitaremos la <strong>Ermita de la Virgen de la Peña</strong> excavada en la roca y pasearemos por los jardines de la muralla.</p><p><em>Tip:</em> Si nos gusta lo curioso, el Carromato de Mijas (miniaturas) es único.</p>'
+                body: '<p class="mb-3 text-sm leading-relaxed"><strong>Qué haremos:</strong> Aparcaremos en el parking público (aprox 1€/día). Subiremos al <span class="text-teal-600 font-semibold">Mirador del Compás</span> para ver las vistas panorámicas de la costa.</p><p class="mb-3 text-sm leading-relaxed">Visitaremos la <strong>Ermita de la Virgen de la Peña</strong> excavada en la roca y pasearemos por los jardines de la muralla.</p><p class="text-xs bg-yellow-50 p-2 rounded border border-yellow-200 text-yellow-800"><i class="fas fa-star mr-1"></i> <em>Tip:</em> Si nos gusta lo curioso, el Carromato de Mijas (museo de miniaturas) es único.</p>'
             },
             'malaga': {
                 title: 'Málaga y Luces',
-                body: '<p class="mb-2"><strong>Plan:</strong> Pasearemos por el <strong>Muelle Uno</strong> al atardecer y subiremos por Calle Larios.</p><p class="mb-2"><strong>Luces:</strong> Veremos el espectáculo musical en Larios (Suele ser 18:30, 20:00, 22:00).</p><p><strong>Cena:</strong> Iremos de tapeo por Calle Granada, Plaza del Carbón o alrededores de la Catedral.</p>'
+                body: '<p class="mb-3 text-sm leading-relaxed"><strong>Plan:</strong> Pasearemos por el moderno <strong>Muelle Uno</strong> al atardecer y subiremos caminando por la famosa Calle Larios.</p><p class="mb-3 text-sm leading-relaxed"><strong>Luces:</strong> Veremos el espectáculo musical de luces en Larios (Horarios habituales: 18:30, 20:00, 22:00).</p><p class="text-sm"><strong>Cena:</strong> Iremos de tapeo por Calle Granada, Plaza del Carbón o alrededores de la Catedral.</p>'
             },
             'ronda': {
                 title: 'Ronda',
-                body: '<p class="mb-2"><strong>Imprescindible:</strong> El <strong>Puente Nuevo</strong>. Bajaremos por el sendero hacia el mirador inferior para la foto icónica.</p><p class="mb-2">Visitaremos la Plaza de Toros y el casco antiguo (La Ciudad).</p><p><strong>Comer:</strong> <em>Tragatá</em> (tapas gourmet) o <em>Casa María</em>.</p>'
+                body: '<p class="mb-3 text-sm leading-relaxed"><strong>Imprescindible:</strong> El <strong>Puente Nuevo</strong>. Bajaremos por el sendero hacia el mirador inferior para la foto icónica que sale en todas las postales.</p><p class="mb-3 text-sm leading-relaxed">Visitaremos la histórica Plaza de Toros y callejearemos por el casco antiguo (La Ciudad).</p><p class="text-sm"><strong>Comer:</strong> <em>Tragatá</em> (tapas gourmet) o <em>Casa María</em>.</p>'
             },
             'setenil': {
                 title: 'Setenil de las Bodegas',
-                body: '<p class="mb-2">Famoso por sus casas bajo las rocas.</p><p>Recorreremos la <strong>Calle Cuevas del Sol</strong> (mucho sol y bares) y la <strong>Calle Cuevas de la Sombra</strong>. Será perfecto para tomar un café y hacer fotos rápidas.</p>'
+                body: '<p class="mb-3 text-sm leading-relaxed">Famoso por sus casas construidas literalmente bajo las rocas.</p><p class="mb-3 text-sm leading-relaxed">Recorreremos la <strong>Calle Cuevas del Sol</strong> (mucho sol y bares) y la <strong>Calle Cuevas de la Sombra</strong>. Será el momento perfecto para tomar un café y hacer fotos rápidas antes de volver.</p>'
             },
             'carihuela': {
                 title: 'Noche en Torremolinos',
-                body: '<p class="mb-2">Daremos un paseo relajante por el paseo marítimo de <strong>La Carihuela</strong>.</p><p><strong>Cena:</strong> Podremos ir a <em>El Gato Lounge</em> (tapas fusión con vistas) o probar el pescadito frito clásico en <em>Casa Juan Los Mellizos</em>.</p>'
+                body: '<p class="mb-3 text-sm leading-relaxed">Daremos un paseo relajante por el paseo marítimo de <strong>La Carihuela</strong>, antiguo barrio de pescadores.</p><p class="text-sm"><strong>Cena:</strong> Podremos ir a <em>El Gato Lounge</em> (tapas fusión con vistas al mar) o probar el pescadito frito clásico en <em>Casa Juan Los Mellizos</em>.</p>'
             },
             'nerja': {
                 title: 'Nerja',
-                body: '<p class="mb-2"><strong>Mañana:</strong> Visitaremos la Cueva de Nerja (¡Tenemos que reservar antes!).</p><p>Luego, daremos un paseo obligado hasta el <strong>Balcón de Europa</strong> con vistas al Mediterráneo.</p>'
+                body: '<p class="mb-3 text-sm leading-relaxed"><strong>Mañana:</strong> Visitaremos la impresionante Cueva de Nerja (¡Tenemos que reservar la entrada antes de ir!).</p><p class="text-sm">Luego, daremos un paseo obligado hasta el <strong>Balcón de Europa</strong> para disfrutar de las vistas al Mediterráneo.</p>'
             },
             'frigiliana': {
                 title: 'Frigiliana',
-                body: '<p class="mb-2">Considerado uno de los pueblos más bonitos de España.</p><p class="mb-2">Nos perderemos por el <strong>Barribarto</strong> (casco antiguo morisco). Veremos calles empinadas, puertas azules y flores.</p><p><em>Atardecer:</em> Iremos a la terraza de The Garden o al Mirador.</p>'
+                body: '<p class="mb-3 text-sm leading-relaxed">Considerado uno de los pueblos más bonitos de España.</p><p class="mb-3 text-sm leading-relaxed">Nos perderemos por el <strong>Barribarto</strong> (casco antiguo morisco). Veremos calles empinadas, puertas azules y muchas flores.</p><p class="text-xs bg-blue-50 p-2 rounded border border-blue-200 text-blue-800"><i class="fas fa-camera mr-1"></i> <em>Atardecer:</em> Iremos a la terraza de The Garden o al Mirador.</p>'
             }
         };
 
