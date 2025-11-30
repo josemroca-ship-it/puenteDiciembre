@@ -30,9 +30,12 @@
             overflow-x: hidden;
             overflow-y: visible !important;
         }
-        /* Asegurar que las imágenes tengan un fondo mientras cargan */
+        /* Fondo de carga */
         .img-placeholder {
-            background-color: #4a5568; /* gray-700 */
+            background-color: #cbd5e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -49,9 +52,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative h-72 flex flex-col justify-center items-center text-white text-center p-6 mb-6 shadow-md overflow-hidden img-placeholder">
-        <!-- Imagen Header: Costa del Sol General -->
-        <img src="https://images.unsplash.com/photo-1627916567389-7e5c5314050d?w=800&auto=format&fit=crop" 
+    <header class="relative h-72 flex flex-col justify-center items-center text-white text-center p-6 mb-6 shadow-md overflow-hidden bg-gray-700">
+        <!-- Imagen Header: Costa del Sol / Málaga -->
+        <img src="https://images.unsplash.com/photo-1561580977-8c46059d087b?auto=format&fit=crop&w=1000&q=80" 
+             onerror="this.src='https://placehold.co/1000x500/2c7a7b/ffffff?text=Málaga+Costa+del+Sol'"
              alt="Costa del Sol" 
              class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-75">
         
@@ -99,9 +103,10 @@
 
         <!-- Día 1 -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden card-zoom">
-            <div class="relative h-40 flex items-end p-4 img-placeholder">
-                <!-- Imagen Día 1: Mijas -->
-                <img src="https://images.unsplash.com/photo-1564750975618-b2a632734685?w=800&auto=format&fit=crop" 
+            <div class="relative h-40 flex items-end p-4 bg-gray-300">
+                <!-- Imagen Día 1: Mijas / Pueblo Blanco -->
+                <img src="https://images.unsplash.com/photo-1534234828569-1f9426d0b30d?auto=format&fit=crop&w=800&q=80" 
+                     onerror="this.src='https://placehold.co/800x400/319795/ffffff?text=Mijas+Pueblo'"
                      alt="Mijas Pueblo" 
                      class="absolute inset-0 w-full h-full object-cover z-0 brightness-75">
                 <div class="relative z-10 text-white w-full">
@@ -157,9 +162,10 @@
 
         <!-- Día 2 -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden card-zoom">
-            <div class="relative h-40 flex items-end p-4 img-placeholder">
+            <div class="relative h-40 flex items-end p-4 bg-gray-300">
                 <!-- Imagen Día 2: Ronda -->
-                <img src="https://images.unsplash.com/photo-1582299723654-2066f1255e2d?w=800&auto=format&fit=crop" 
+                <img src="https://images.unsplash.com/photo-1561731216-c3a4d99436dd?auto=format&fit=crop&w=800&q=80" 
+                     onerror="this.src='https://placehold.co/800x400/5a67d8/ffffff?text=Ronda+Puente+Nuevo'"
                      alt="Ronda" 
                      class="absolute inset-0 w-full h-full object-cover z-0 brightness-75">
                 <div class="relative z-10 text-white w-full">
@@ -225,9 +231,10 @@
 
         <!-- Día 3 -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden card-zoom">
-            <div class="relative h-40 flex items-end p-4 img-placeholder">
-                <!-- Imagen Día 3: Nerja Balcón de Europa -->
-                <img src="https://images.unsplash.com/photo-1533221295240-a0e2815121b6?w=800&auto=format&fit=crop" 
+            <div class="relative h-40 flex items-end p-4 bg-gray-300">
+                <!-- Imagen Día 3: Nerja -->
+                <img src="https://images.unsplash.com/photo-1596716039327-02409df87d5b?auto=format&fit=crop&w=800&q=80" 
+                     onerror="this.src='https://placehold.co/800x400/3182ce/ffffff?text=Nerja+Balcon+de+Europa'"
                      alt="Nerja" 
                      class="absolute inset-0 w-full h-full object-cover z-0 brightness-75">
                 <div class="relative z-10 text-white w-full">
