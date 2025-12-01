@@ -40,6 +40,16 @@
         .pattern-waves {
             background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 10px, transparent 10px, transparent 20px);
         }
+
+        /* NUEVA ANIMACIÓN: Rotación Suave para el Sol */
+        @keyframes soft-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-soft-spin {
+            animation: soft-spin 20s linear infinite; /* 20 segundos para una vuelta completa muy lenta */
+            display: inline-block; /* Necesario para que rote correctamente */
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 pb-12">
@@ -151,7 +161,7 @@
                 <div class="relative pl-8 mb-8">
                     <div class="absolute left-2 top-1 w-4 h-4 bg-orange-400 rounded-full border-2 border-white z-10 shadow"></div>
                     <h3 class="font-bold text-gray-800">Almuerzo: Torremolinos</h3>
-                    <p class="text-gray-600 text-sm">Comida en casa/zona y breve descanso.</p>
+                    <p class="text-gray-600 text-sm">Comida en chiringuito Torremolinos.</p>
                 </div>
 
                 <!-- Item 1.3 -->
@@ -159,14 +169,14 @@
                     <div class="absolute left-2 top-1 w-4 h-4 bg-purple-600 rounded-full border-2 border-white z-10 shadow"></div>
                     <div class="flex justify-between items-start">
                         <div>
-                            <h3 class="font-bold text-gray-800">Noche: Luces Málaga</h3>
+                            <h3 class="font-bold text-gray-800">Tarde/Noche: Luces Málaga</h3>
                             <button onclick="openModal('malaga')" class="text-teal-600 text-xs font-bold hover:underline mt-1 flex items-center">
                                 <i class="fas fa-info-circle mr-1"></i> Ver detalle
                             </button>
                         </div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Estación+Tren+Torremolinos" target="_blank" class="flex flex-col items-center ml-2 group">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Estación+de+Tren+La+Colina" target="_blank" class="flex flex-col items-center ml-2 group">
                             <span class="bg-purple-100 text-purple-600 w-8 h-8 rounded-full flex items-center justify-center mb-1 group-hover:bg-purple-600 group-hover:text-white transition"><i class="fas fa-train"></i></span>
-                            <span class="text-[10px] text-purple-600 font-bold">Estación</span>
+                            <span class="text-[10px] text-purple-600 font-bold">La Colina</span>
                         </a>
                     </div>
                 </div>
@@ -263,7 +273,8 @@
                 </div>
                 <!-- Iconos Decorativos -->
                 <div class="relative z-10 text-right opacity-90 flex flex-col items-end">
-                    <i class="fas fa-sun text-4xl mb-1 text-yellow-200"></i>
+                    <!-- Se añade la clase animate-soft-spin al icono del sol -->
+                    <i class="fas fa-sun text-4xl mb-1 text-yellow-200 animate-soft-spin"></i>
                     <i class="fas fa-water text-5xl"></i>
                 </div>
             </div>
